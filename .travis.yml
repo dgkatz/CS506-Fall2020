@@ -28,5 +28,8 @@ before_install: |
   fi
 install: pip install tox-travis coveralls
 script: |
+  cd 01-python/
+  python test_city.py
+  cd ..
   cd 02-library/
   tox

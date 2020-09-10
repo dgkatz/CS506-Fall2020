@@ -12,7 +12,9 @@ road not found
 museum not found
 restaurant not found
 mall not found
-gym not found
+|----------|
+|  ❚█══█❚  |
+|----------|
 market not found
 road not found
 lake not found
