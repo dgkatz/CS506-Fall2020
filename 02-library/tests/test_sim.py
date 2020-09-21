@@ -12,11 +12,11 @@ def test_euclidean():
     # sanity checks
     try:
         sim.euclidean_dist([], [])
-    except ValueError as e:
+    except sim.DistanceCalculationError as e:
         assert str(e) == "lengths must not be zero"
     try:
         sim.euclidean_dist([0], [0,0])
-    except ValueError as e:
+    except sim.DistanceCalculationError as e:
         assert str(e) == "lengths must be equal"
     
     assert sim.euclidean_dist([0,0], [1,0]) == 1
@@ -41,11 +41,11 @@ def test_manhattan():
     # sanity checks
     try:
         sim.manhattan_dist([], [])
-    except ValueError as e:
+    except sim.DistanceCalculationError as e:
         assert str(e) == "lengths must not be zero"
     try:
         sim.manhattan_dist([0], [0,0])
-    except ValueError as e:
+    except sim.DistanceCalculationError as e:
         assert str(e) == "lengths must be equal"
     
     assert sim.manhattan_dist([0,0], [1,1]) == 2
@@ -67,11 +67,11 @@ def test_manhattan():
 def test_cosine():
     try:
         sim.cosine_sim([], [])
-    except ValueError as e:
+    except sim.DistanceCalculationError as e:
         assert str(e) == "lengths must not be zero"
     try:
         sim.cosine_sim([0], [0,0])
-    except ValueError as e:
+    except sim.DistanceCalculationError as e:
         assert str(e) == "lengths must be equal"
     
     assert sim.cosine_sim([1,0], [1,0]) == 1
@@ -82,7 +82,7 @@ def test_jaccard():
     # sanity checks
     try:
         sim.jaccard_dist([], [])
-    except ValueError as e:
+    except sim.DistanceCalculationError as e:
         assert str(e) == "lengths must not be zero"
     
     assert sim.jaccard_dist([0,0], [1,0]) == .5

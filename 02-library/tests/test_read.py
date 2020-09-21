@@ -2,6 +2,7 @@ import pytest
 
 from cs506 import read
 
+
 @pytest.mark.parametrize('dataset,expected', [
     (
         "tests/test_files/dataset_1.csv",
